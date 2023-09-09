@@ -30,6 +30,7 @@
       cursor: pointer;
       position: absolute;
       font-weight: bold;
+      transition: all 0.2s ease-in-out;
     }
 
     .like__icon{
@@ -40,11 +41,19 @@
       bottom: 10px;
       left: 10px;
       color: white;
+
+      &:hover{
+        color: rgb(0, 0, 0);
+      }
     }
     .dl__icon{
       top: 10px;
       left: 10px;
       color: white;
+
+      &:hover{
+        color: rgb(0, 0, 0);
+      }
     }
   }
 }

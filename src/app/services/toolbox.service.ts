@@ -23,14 +23,36 @@ export class ToolboxService {
         .select('*');
 
       if (error) {
-        console.error('Erreur lors de la récupération des images:', error);
+        console.error('OH IMAGE MAL RECUPEREE', error);
         return [];
       }
 
       return data || [];
     } catch (e) {
-      console.error('Une erreur inattendue s\'est produite:', e);
+      console.error('HOOO PROBLEME CHELOU SUR LA REQUETE', e);
       return [];
+    }
+  }
+
+  async addImage(imageUrl: string) {
+    try {
+      const { data, error } = await this.supabase
+        .from('pics_gallery')
+        .insert(
+          {
+            url: imageUrl
+          }
+        );
+
+      if (error) {
+        console.error('BRUH IMAGE PAS AJOUTEE', error);
+        return null;
+      }
+
+      return data && data[0];
+    } catch (e) {
+      console.error('BRUH PROBLEME CHELOU SUR LA REQUETE', e);
+      return null;
     }
   }
 }

@@ -1,0 +1,8 @@
+<footer>
+  <form class="footer__form" (submit)="fetchData()">
+      <input type="text" [(ngModel)]="tempUrl" name="tempUrl" placeholder="Entrez une URL">
+      <button type="submit" class="add__btn" >
+        <mat-icon (click)="fetchData()" class="add__icon">add</mat-icon>
+      </button>
+  </form>
+</footer>

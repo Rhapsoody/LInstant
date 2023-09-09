@@ -1,0 +1,28 @@
+<div class="image__container">
+  <div class="header__icon">
+    <mat-icon class="h__icon">electric_bolt</mat-icon>
+  </div>
+  <div class="image__item" *ngFor="let picture of pictures">
+    <img src={{picture.url}} alt="">
+    <div class="icons">
+      <mat-icon
+      (click)="picture.liked = !picture.liked"
+      color="warn"
+      class=" icon like__icon"
+      fontIcon="favorite_border"
+      >
+      1
+    </mat-icon>
+      <span *ngIf="picture.liked" >
+        <mat-icon
+        color="warn"
+        (click)="picture.liked = !picture.liked"
+        class="icon like__icon">
+        favorite
+      </mat-icon>
+      </span>
+      <mat-icon class="icon share__icon">share</mat-icon>
+      <mat-icon class="icon dl__icon">file_download</mat-icon>
+    </div>
+  </div>
+</div>
